@@ -1,0 +1,32 @@
+﻿<!--<h1>Login</h1>
+
+<input type="button" class="btn btn-primary" value="Login"
+       ng-click="login()"/>
+
+<input type="button" class="btn btn-primary" value="admin Login"
+       ng-click="adminLogin()"/>-->
+
+<form class="form-horizontal" role="form" novalidate>
+
+    <div class="form-group">
+        <label for="userName" class="col-sm-3 control-label">User Name</label>
+        <div class="col-sm-9">
+            <input type="text" id="userName" name="userName" class="form-control"
+                   ng-model="user.userName"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password" class="col-sm-3 control-label">User Name</label>
+        <div class="col-sm-9">
+            <input type="text" id="password" name="password" class="form-control"
+                   ng-model="user.password"/>
+        </div>
+    </div>
+
+    <div class="col-sm-offset-5 col-sm-9">
+        <input type="button" class="btn btn-default" value="Login"
+               ng-click="login()" />
+    </div>
+
+</form>

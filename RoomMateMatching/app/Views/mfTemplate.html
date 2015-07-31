@@ -1,0 +1,139 @@
+﻿<form class="form-horizontal center_div" name="matchingForm" novalidate role="form">
+
+    <div class="col-sm-offset-3">
+        <div class="form-group" ng-if="currentPage == 1">
+            <label for="question1" class="col-sm-3 control-label">Religious person?</label>
+            <div class="btn-group col-sm-9" data-toggle="buttons" id="question1">
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer01" btn-radio="'1'">1</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer01" btn-radio="'2'">2</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer01" btn-radio="'3'">3</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer01" btn-radio="'4'">4</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer01" btn-radio="'5'">5</label>
+
+            </div>
+            <span ng-show="matchingForm.ss.$error.required">required</span>
+        </div>
+
+        <div class="form-group" ng-if="currentPage == 2">
+            <label for="question2" class="col-sm-3 control-label">Sleep Schedule? (earlly bird to night owl)</label>
+            <div class="btn-group col-sm-9" id="question2">
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer02" btn-radio="'1'">1</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer02" btn-radio="'2'">2</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer02" btn-radio="'3'">3</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer02" btn-radio="'4'">4</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer02" btn-radio="'5'">5</label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-if="currentPage == 3">
+            <label for="question3" class="col-sm-3 control-label">Cleanliness? (spotless to slob)</label>
+            <div class="btn-group col-sm-9" id="question3">
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer03" btn-radio="'1'">1</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer03" btn-radio="'2'">2</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer03" btn-radio="'3'">3</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer03" btn-radio="'4'">4</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer03" btn-radio="'5'">5</label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-if="currentPage == 4">
+            <label for="question4" class="col-sm-3 control-label">Guests? (never to any time)</label>
+            <div class="btn-group col-sm-9" id="question4">
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer04" btn-radio="'1'">1</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer04" btn-radio="'2'">2</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer04" btn-radio="'3'">3</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer04" btn-radio="'4'">4</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer04" btn-radio="'5'">5</label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-if="currentPage == 5">
+            <label for="question5" class="col-sm-3 control-label">Studying?</label>
+            <div class="btn-group col-sm-9" id="question5">
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer05" btn-radio="'1'">1</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer05" btn-radio="'2'">2</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer05" btn-radio="'3'">3</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer05" btn-radio="'4'">4</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer05" btn-radio="'5'">5</label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-if="currentPage == 6">
+            <label for="question6" class="col-sm-3 control-label">Loudness?</label>
+            <div class="btn-group col-sm-9" id="question6">
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer06" btn-radio="'1'">1</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer06" btn-radio="'2'">2</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer06" btn-radio="'3'">3</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer06" btn-radio="'4'">4</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer06" btn-radio="'5'">5</label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-if="currentPage == 7">
+            <label for="question7" class="col-sm-3 control-label">Smoking?</label>
+            <div class="btn-group col-sm-9" id="question7">
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer07" btn-radio="'1'">1</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer07" btn-radio="'2'">2</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer07" btn-radio="'3'">3</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer07" btn-radio="'4'">4</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer07" btn-radio="'5'">5</label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-if="currentPage == 8">
+            <label for="question8" class="col-sm-3 control-label">Social?</label>
+            <div class="btn-group col-sm-9" id="question8">
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer08" btn-radio="'1'">1</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer08" btn-radio="'2'">2</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer08" btn-radio="'3'">3</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer08" btn-radio="'4'">4</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer08" btn-radio="'5'">5</label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-if="currentPage == 9">
+            <label for="question9" class="col-sm-3 control-label">Going out?</label>
+            <div class="btn-group col-sm-9" id="question9">
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer09" btn-radio="'1'">1</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer09" btn-radio="'2'">2</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer09" btn-radio="'3'">3</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer09" btn-radio="'4'">4</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer09" btn-radio="'5'">5</label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-if="currentPage == 10">
+            <label for="question10" class="col-sm-3 control-label">Listening to loud music?</label>
+            <div class="btn-group col-sm-9" id="question10">
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer10" btn-radio="'1'">1</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer10" btn-radio="'2'">2</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer10" btn-radio="'3'">3</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer10" btn-radio="'4'">4</label>
+                <label class="btn btn-primary" ng-model="editableAnswers.Answer10" btn-radio="'5'">5</label>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="col-sm-offset-3 col-sm-9">
+        <pagination total-items="totalItems" ng-model="currentPage"></pagination>
+    </div>
+
+    <div class="col-sm-offset-5 col-sm-9">
+        <input type="button" class="btn btn-default" value="Cancel"
+               ng-click="cancelForm()" />
+        <input type="submit" class="btn btn-primary" value="Submit"
+               ng-click="submitForm()" />
+    </div>
+
+    <div class="col-sm-offset-4 col-sm-4">
+        <br/>
+        <alert ng-if="showValidationError" ng-model="alert" type="{{alert.type}}">{{alert.msg}}</alert>
+    </div>
+
+
+
+</form>

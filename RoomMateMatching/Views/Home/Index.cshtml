@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+
+<html ng-app="roomMateMatchingApp">
+<head>
+    <base href="/">   
+    <title>Room Mate Matching</title>
+</head>
+<body class="container">
+<br/>
+<div ng-view></div>
+@Styles.Render("~/bundles/mini-spa/style")
+@Scripts.Render("~/bundles/mini-spa/script")
+</body>
+</html>
