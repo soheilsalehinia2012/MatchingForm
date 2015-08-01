@@ -53,7 +53,8 @@ roomMateMatchingApp.controller('mfController',
         };
 
         $scope.cancelForm = function() {
-            $window.history.back();
+            authenticationService.set(false);
+            $location.path('/login');
         };
 
         $scope.totalItems = 100;

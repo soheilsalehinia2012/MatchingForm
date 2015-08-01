@@ -16,8 +16,13 @@ namespace RoomMateMatching.Controllers
         // GET: /MatchingForm/
         public ActionResult Insert(MatchingFormVM matchingForm)
         {
+            //for test, we should have a database of answers 
+            //and insert in it
+            List<MatchingFormVM> list = new List<MatchingFormVM>();
+            
             if (ModelState.IsValid)
             {
+                list.Add(matchingForm);
                 return new HttpStatusCodeResult(HttpStatusCode.Created, "answers added.");
             }
             else

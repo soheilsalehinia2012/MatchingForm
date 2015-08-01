@@ -14,7 +14,7 @@ namespace RoomMateMatching.Controllers
     {
         public ActionResult GetStdPass(UserVM user)
         {
-            //For Test We Should have a database of users
+            //For Test, We Should have a database of users
             //and check if this user object is in database
 
             List<UserVM> list = new List<UserVM>()
