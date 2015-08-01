@@ -1,18 +1,29 @@
 ﻿roomMateMatchingApp.factory('authenticationService',
     function () {
         var isAuthenticated = false;
+        var stdNum = null;
 
-        function set(data) {
-            isAuthenticated = data;
+        function setIsAuthenticated(isauth) {
+            isAuthenticated = isauth;
         }
 
-        function get() {
+        function getIsAuthenticated() {
             return isAuthenticated;
         }
 
+        function setStdNum(stdnum) {
+            stdNum = stdnum;
+        }
+
+        function getStdNum() {
+            return stdNum;
+        }
+
         return {
-            set: set,
-            get: get
+            setIsAuthenticated: setIsAuthenticated,
+            getIsAuthenticated: getIsAuthenticated,
+            setStdNum: setStdNum,
+            getStdNum: getStdNum
         };
 
     });

@@ -4,7 +4,7 @@ roomMateMatchingApp.controller('mfController',
     function mfController($scope, $window, $routeParams, mfDataService, $location, authenticationService) {
 
 
-        if (!authenticationService.get()) {
+        if (!authenticationService.getIsAuthenticated()) {
             //alert("You are not authenticated!!!");
             $location.path('/login');
         }
@@ -33,6 +33,8 @@ roomMateMatchingApp.controller('mfController',
             }
             if ($scope.isFill) {
 
+                $scope.editableAnswers.stdNum = authenticationService.getStdNum();
+
                 mfDataService.insertAnswers($scope.editableAnswers).then(
                     function (results) {
                         //on success    
@@ -42,7 +44,7 @@ roomMateMatchingApp.controller('mfController',
                     },
                     function (results) {
                         //on error
-                        alert(results);
+                        alert("Can't done right now, please come back later!!!");
                     });
 
                 
@@ -53,7 +55,7 @@ roomMateMatchingApp.controller('mfController',
         };
 
         $scope.cancelForm = function() {
-            authenticationService.set(false);
+            authenticationService.setIsAuthenticated(false);
             $location.path('/login');
         };
 

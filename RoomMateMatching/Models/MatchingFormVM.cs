@@ -9,6 +9,8 @@ namespace RoomMateMatching.Models
     public class MatchingFormVM
     {
         [Required]
+        public string StdNum { get; set; }
+        [Required]
         public string Answer01 { get; set; }
         [Required]
         public string Answer02 { get; set; }
