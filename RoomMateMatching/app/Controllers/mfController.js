@@ -56,6 +56,7 @@ roomMateMatchingApp.controller('mfController',
 
         $scope.cancelForm = function() {
             authenticationService.setIsAuthenticated(false);
+            authenticationService.setStdNum(null);
             $location.path('/login');
         };
 

@@ -3,7 +3,8 @@ roomMateMatchingApp.controller('lgiController',
     ['$scope', '$location', 'userDataService', 'authenticationService',
         function ($scope, $location, userDataService, authenticationService) {
 
-        $scope.isAuthenticate = false;
+        authenticationService.setIsAuthenticated(false);;
+        authenticationService.setStdNum(null);
 
         $scope.user = userDataService.getUser();
         $scope.editableUser = angular.copy($scope.user);
@@ -12,11 +13,18 @@ roomMateMatchingApp.controller('lgiController',
 
             userDataService.getStdPass($scope.editableUser).then(
                 function (results) {
-                    //on success    
-                    $scope.user = angular.copy($scope.editableUser);
-                    authenticationService.setIsAuthenticated(results.data);
-                    authenticationService.setStdNum($scope.user.stdNum);
-                    $location.path('/matchingForm');
+                    if (!results.data.isFilledForm && results.data.role == "user") {
+                        //on success    
+                        $scope.user = angular.copy($scope.editableUser);
+                        authenticationService.setIsAuthenticated(true);
+                        authenticationService.setStdNum($scope.user.stdNum);
+                        $location.path('/matchingForm');
+                    } else if (results.data.role == "admin") {
+                        authenticationService.setIsAuthenticatedAsAdmin(true);
+                        $location.path('/groupResults');
+                    } else {
+                        alert("You already filled the form...")
+                    }
                 },
                 function(results) {
                     //on error

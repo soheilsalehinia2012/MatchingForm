@@ -2,6 +2,7 @@
     function () {
         var isAuthenticated = false;
         var stdNum = null;
+        var isAuthenticatedAsAdmin = false;
 
         function setIsAuthenticated(isauth) {
             isAuthenticated = isauth;
@@ -9,6 +10,14 @@
 
         function getIsAuthenticated() {
             return isAuthenticated;
+        }
+
+        function setIsAuthenticatedAsAdmin(isauth) {
+            isAuthenticatedAsAdmin = isauth;
+        }
+
+        function getIsAuthenticatedAsAdmin() {
+            return isAuthenticatedAsAdmin;
         }
 
         function setStdNum(stdnum) {
@@ -23,7 +32,9 @@
             setIsAuthenticated: setIsAuthenticated,
             getIsAuthenticated: getIsAuthenticated,
             setStdNum: setStdNum,
-            getStdNum: getStdNum
+            getStdNum: getStdNum,
+            setIsAuthenticatedAsAdmin: setIsAuthenticatedAsAdmin,
+            getIsAuthenticatedAsAdmin: getIsAuthenticatedAsAdmin
         };
 
     });

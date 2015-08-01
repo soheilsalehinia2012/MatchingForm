@@ -21,11 +21,15 @@ namespace RoomMateMatching.Controllers
             {
                 new UserVM() {
                     StdNum = "882979",
-                    Password = "12345"
+                    Password = "12345",
+                    Role = "user",
+                    IsFilledForm = false
                 },
                 new UserVM() {
                     StdNum = "882970",
-                    Password = "54321"
+                    Password = "54321",
+                    Role = "admin",
+                    IsFilledForm = true
                 }
             };
 
@@ -33,8 +37,8 @@ namespace RoomMateMatching.Controllers
             {
                 if (list.Any(x => x.StdNum == user.StdNum && x.Password == user.Password))
                 {
-                    var auth = true;
-                    return GetJsonContentResult(auth);
+                    var u = list.Find(x => x.StdNum == user.StdNum);
+                    return GetJsonContentResult(u);
 
                 }
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
