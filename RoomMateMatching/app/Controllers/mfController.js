@@ -1,7 +1,14 @@
 ﻿
 roomMateMatchingApp.controller('mfController',
-    ['$scope', '$window', '$routeParams', 'mfDataService', '$location',
-    function mfController($scope, $window, $routeParams, mfDataService , $location) {
+    ['$scope', '$window', '$routeParams', 'mfDataService', '$location', 'authenticationService',
+    function mfController($scope, $window, $routeParams, mfDataService, $location, authenticationService) {
+
+
+        if (!authenticationService.get()) {
+            //alert("You are not authenticated!!!");
+            $location.path('/login');
+        }
+
         $scope.answers = mfDataService.getAnswers();
 
         $scope.editableAnswers = angular.copy($scope.answers);
@@ -31,7 +38,8 @@ roomMateMatchingApp.controller('mfController',
                         //on success    
                         $scope.answers = angular.copy($scope.editableAnswers);
                         alert("You applied the form...");
-                        $location.path('/login');                    },
+                        $location.path('/login');
+                    },
                     function (results) {
                         //on error
                         alert(results);

@@ -1,32 +1,30 @@
-﻿<!--<h1>Login</h1>
+﻿<h1>Login</h1>
 
-<input type="button" class="btn btn-primary" value="Login"
-       ng-click="login()"/>
+<form class="form-horizontal center_div" role="form" name="loginForm" novalidate>
 
-<input type="button" class="btn btn-primary" value="admin Login"
-       ng-click="adminLogin()"/>-->
-
-<form class="form-horizontal" role="form" novalidate>
-
-    <div class="form-group">
-        <label for="userName" class="col-sm-3 control-label">User Name</label>
+    <div class="form-group" ng-class="{'has-error' : loginForm.stdNum.$invalid && loginForm.stdNum.$dirty}">
+        <label for="stdNum" class="col-sm-3 control-label">Std Number</label>
         <div class="col-sm-9">
-            <input type="text" id="userName" name="userName" class="form-control"
-                   ng-model="user.userName"/>
+            <input type="text" id="stdNum" name="stdNum" class="form-control-static"
+                   ng-model="editableUser.stdNum" ng-required="true" />
+            <span class="help-block"
+                  ng-if="loginForm.stdNum.$error.required && loginForm.stdNum.$dirty">Std Number is required</span>
         </div>
     </div>
 
-    <div class="form-group">
-        <label for="password" class="col-sm-3 control-label">User Name</label>
+    <div class="form-group" ng-class="{'has-error' : loginForm.password.$invalid && loginForm.password.$dirty}">
+        <label for="password" class="col-sm-3 control-label">Password</label>
         <div class="col-sm-9">
-            <input type="text" id="password" name="password" class="form-control"
-                   ng-model="user.password"/>
+            <input type="password" id="password" name="password" class="form-control-static"
+                   ng-model="editableUser.password" ng-required="true" />
+            <span class="help-block"
+                  ng-if="loginForm.password.$error.required && loginForm.password.$dirty">Passwored is required</span>
         </div>
     </div>
 
-    <div class="col-sm-offset-5 col-sm-9">
+    <div class="col-sm-offset-3 col-sm-9">
         <input type="button" class="btn btn-default" value="Login"
-               ng-click="login()" />
+               ng-click="login()" ng-disabled="loginForm.$invalid" />
     </div>
 
 </form>

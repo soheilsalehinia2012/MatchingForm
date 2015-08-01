@@ -40,7 +40,9 @@ namespace RoomMateMatching
                 "~/app/Services/mfDataService.js",
                 "~/app/Controllers/mfController.js",
                 "~/app/Controllers/lgiController.js",
-                "~/app/Controllers/grfController.js"
+                "~/app/Controllers/grfController.js",
+                "~/app/Services/userDataService.js",
+                "~/app/Services/authenticationService.js"
                 ));
 
 
