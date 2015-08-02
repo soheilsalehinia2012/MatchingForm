@@ -8,16 +8,16 @@ roomMateMatchingApp.factory('mfDataService',
 
         var getAnswers = function() {
             return {
-                Answer01: null,
-                Answer02: null,
-                Answer03: null,
-                Answer04: null,
-                Answer05: null,
-                Answer06: null,
-                Answer07: null,
-                Answer08: null,
-                Answer09: null,
-                Answer10: null
+                Answer01: "1",
+                Answer02: "2",
+                Answer03: "3",
+                Answer04: "4",
+                Answer05: "5",
+                Answer06: "1",
+                Answer07: "2",
+                Answer08: "3",
+                Answer09: "4",
+                Answer10: "5"
             };
         };
 

@@ -24,7 +24,9 @@ namespace RoomMateMatching.Controllers
                     StdNum = "882979",
                     Password = "12345",
                     Role = "user",
-                    IsFilledForm = false
+                    IsFilledForm = false,
+                    FieldOfEducation = "Computer",
+                    City = "Tehran"
                 },
                 new UserVM() {
                     StdNum = "882970",

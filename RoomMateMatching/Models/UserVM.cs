@@ -14,5 +14,7 @@ namespace RoomMateMatching.Models
         public string Password { get; set; }
         public string Role { get; set; }
         public bool IsFilledForm { get; set; }
+        public string FieldOfEducation { get; set; }
+        public string City { get; set; }
     }
 }
