@@ -51,18 +51,6 @@ namespace RoomMateMatching.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
             }
         }
-
-        public ContentResult GetJasonContentResult(object data)
-        {
-            var camelCaseFormatter = new JsonSerializerSettings();
-            camelCaseFormatter.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            var jsonResult = new ContentResult()
-            {
-                Content = JsonConvert.SerializeObject(data, camelCaseFormatter),
-                ContentType = "application/json"
-            };
-            return jsonResult;
-        }
     }
 	
 }
