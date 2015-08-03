@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using NUnit.Framework;
@@ -10,12 +9,24 @@ namespace SampleDb
     public class SampleTest
     {
         [Test]
-        public void CreateDbTest()
+        public void CreateAndUpdateDbTest()
         {
-            var dbFileName = "MyDatabase.sqlite";
-            if (File.Exists(dbFileName))
-                return;
-            DataCollector.CreateDb(dbFileName);
+            DataCollector.CreateDb(true);
+            DataCollector.InitDb();
+
+            var allUsers = DataCollector.GetAllUsers();
+            Assert.AreEqual(new List<User>
+            {
+                new User {Id = 1, StdNumber = "1", Pass = "1", TestResult = "-"},
+                new User {Id = 2, StdNumber = "2", Pass = "2", TestResult = "-"},
+            }, allUsers);
+
+            var first = allUsers.First();
+            first.TestResult = "12345";
+            DataCollector.UpdateUser(first);
+
+            var updatedUsers = DataCollector.GetAllUsers();
+            Assert.AreEqual("12345", updatedUsers.First().TestResult);
         }
 
         [Test]
@@ -36,32 +47,6 @@ namespace SampleDb
             Assert.AreEqual(new List<string> { "1", "3" }, groups.First());
             Assert.AreEqual(new List<string> {"2", "5"}, groups.Skip(1).First());
             Assert.AreEqual(new List<string> {"4"}, groups.Last());
-        }
-    }
-
-    public abstract class DataAnalayser
-    {
-        public static List<List<User>> CreateGroups(List<User> users, int groupSize)
-        {
-            var orderedUsers = users.Zip(users.Select(user => user.TestResult.Sum(c => Char.GetNumericValue(c))),
-                (user, d) => new {User = user, Score = d})
-                .OrderBy(tuple => tuple.Score);
-            var result = new List<List<User>>();
-            var room = new List<User>();
-            foreach (var user in orderedUsers)
-            {
-                room.Add(user.User);
-                if (room.Count == groupSize)
-                {
-                    result.Add(room);
-                    room = new List<User>();
-                }
-            }
-
-            if (room.Count != 0)
-                result.Add(room);
-
-            return result;
         }
     }
 }
