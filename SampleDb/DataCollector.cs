@@ -3,7 +3,7 @@ using System.Data.SQLite;
 
 namespace SampleDb
 {
-    public class DataCollector
+    public static class DataCollector
     {
         public static void CreateDb(string dbFileName, bool initDb = true)
         {
