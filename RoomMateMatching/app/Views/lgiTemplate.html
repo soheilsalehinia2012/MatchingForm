@@ -6,7 +6,7 @@
         <label for="stdNum" class="col-sm-3 control-label">Std Number</label>
         <div class="col-sm-9">
             <input type="text" id="stdNum" name="stdNum" class="form-control-static"
-                   ng-model="editableUser.stdNum" ng-required="true" />
+                   ng-model="user.stdNum" ng-required="true" />
             <span class="help-block"
                   ng-if="loginForm.stdNum.$error.required && loginForm.stdNum.$dirty">Std Number is required</span>
         </div>
@@ -16,7 +16,7 @@
         <label for="password" class="col-sm-3 control-label">Password</label>
         <div class="col-sm-9">
             <input type="password" id="password" name="password" class="form-control-static"
-                   ng-model="editableUser.password" ng-required="true" />
+                   ng-model="user.password" ng-required="true" />
             <span class="help-block"
                   ng-if="loginForm.password.$error.required && loginForm.password.$dirty">Passwored is required</span>
         </div>

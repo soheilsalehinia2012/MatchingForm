@@ -2,8 +2,8 @@
 roomMateMatchingApp.factory('mfDataService',
     ['$http', function ($http) {
         
-        var insertAnswers = function(newAnswers) {
-            return $http.post("MatchingForm/Insert" , newAnswers);
+        var insertAnswers = function(answers) {
+            return $http.post("MatchingForm/Insert", answers);
         }
 
         var getAnswers = function() {

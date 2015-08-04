@@ -9,36 +9,43 @@ roomMateMatchingApp.controller('mfController',
             $location.path('/login');
         }
 
+        //for preset the answers, later will be deleted
         $scope.answers = mfDataService.getAnswers();
-
-        $scope.editableAnswers = angular.copy($scope.answers);
 
         $scope.showValidationError = false;
         $scope.isFill = false;
 
         $scope.submitForm = function () {
 
-            if ($scope.editableAnswers.Answer01 != null &&
-                $scope.editableAnswers.Answer02 != null &&
-                $scope.editableAnswers.Answer03 != null &&
-                $scope.editableAnswers.Answer04 != null &&
-                $scope.editableAnswers.Answer05 != null &&
-                $scope.editableAnswers.Answer06 != null &&
-                $scope.editableAnswers.Answer07 != null &&
-                $scope.editableAnswers.Answer08 != null &&
-                $scope.editableAnswers.Answer09 != null &&
-                $scope.editableAnswers.Answer10 != null) {
+            if ($scope.answers.Answer01 != null &&
+                $scope.answers.Answer02 != null &&
+                $scope.answers.Answer03 != null &&
+                $scope.answers.Answer04 != null &&
+                $scope.answers.Answer05 != null &&
+                $scope.answers.Answer06 != null &&
+                $scope.answers.Answer07 != null &&
+                $scope.answers.Answer08 != null &&
+                $scope.answers.Answer09 != null &&
+                $scope.answers.Answer10 != null) {
 
                     $scope.isFill = true;
             }
             if ($scope.isFill) {
 
-                $scope.editableAnswers.stdNum = authenticationService.getStdNum();
+                $scope.answers.answersString = $scope.answers.Answer01 +
+                    $scope.answers.Answer02 +
+                    $scope.answers.Answer03 +
+                    $scope.answers.Answer04 +
+                    $scope.answers.Answer05 +
+                    $scope.answers.Answer06 +
+                    $scope.answers.Answer07 +
+                    $scope.answers.Answer08 +
+                    $scope.answers.Answer09 +
+                    $scope.answers.Answer10;
 
-                mfDataService.insertAnswers($scope.editableAnswers).then(
+                mfDataService.insertAnswers($scope.answers).then(
                     function (results) {
                         //on success    
-                        $scope.answers = angular.copy($scope.editableAnswers);
                         alert("You applied the form...");
                         $location.path('/login');
                     },
@@ -56,7 +63,6 @@ roomMateMatchingApp.controller('mfController',
 
         $scope.cancelForm = function() {
             authenticationService.setIsAuthenticated(false);
-            authenticationService.setStdNum(null);
             $location.path('/login');
         };
 

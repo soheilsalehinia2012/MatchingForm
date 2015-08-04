@@ -6,15 +6,7 @@ roomMateMatchingApp.factory('userDataService',
             return $http.post("Login/GetStdPass", user);
         }
 
-        var getUser = function () {
-            return {
-                stdNum: null,
-                password: null
-            };
-        };
-
         return {
-            getStdPass: getStdPass,
-            getUser: getUser
+            getStdPass: getStdPass
         };
     }]);

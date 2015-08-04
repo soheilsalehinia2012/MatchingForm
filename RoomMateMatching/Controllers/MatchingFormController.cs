@@ -16,34 +16,13 @@ namespace RoomMateMatching.Controllers
         // GET: /MatchingForm/
         public ActionResult Insert(MatchingFormVM matchingForm)
         {
-            //For Test, We Should have a database of users
-            //and check if this user object is in database
-            List<UserVM> userList = new List<UserVM>()
-            {
-                new UserVM() {
-                    StdNum = "882979",
-                    Password = "12345",
-                    Role = "user",
-                    IsFilledForm = false,
-                    FieldOfEducation = "Computer",
-                    City = "Tehran"
-                },
-                new UserVM() {
-                    StdNum = "882970",
-                    Password = "54321",
-                    Role = "admin",
-                    IsFilledForm = true
-                }
-            };
-            
             //for test, we should have a database of answers 
             //and insert in it
-            List<MatchingFormVM> answersList = new List<MatchingFormVM>();
+            List<MatchingFormVM> list = new List<MatchingFormVM>();
             
             if (ModelState.IsValid)
             {
-                answersList.Add(matchingForm);
-                userList.Find(x => x.StdNum == matchingForm.StdNum).IsFilledForm = true;
+                list.Add(matchingForm);
                 return new HttpStatusCodeResult(HttpStatusCode.Created, "answers added.");
             }
             else

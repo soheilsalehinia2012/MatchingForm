@@ -192,7 +192,6 @@
     <Compile Include="StartUp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\Controllers\grfController.js" />
     <Content Include="app\Controllers\lgiController.js" />
     <Content Include="app\Controllers\mfController.js" />
     <Content Include="app\index.html" />
@@ -200,7 +199,6 @@
     <Content Include="app\Services\authenticationService.js" />
     <Content Include="app\Services\mfDataService.js" />
     <Content Include="app\Services\userDataService.js" />
-    <Content Include="app\Views\grfTemplate.html" />
     <Content Include="app\Views\lgiTemplate.html" />
     <Content Include="app\Views\mfTemplate.html" />
     <Content Include="Content\app.css" />

@@ -11,10 +11,6 @@ roomMateMatchingApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: "app/Views/mfTemplate.html",
             controller: "mfController"
         })
-        .when("/groupResults", {
-            templateUrl: "app/Views/grfTemplate.html",
-            controller: "grfController"
-        })
         .otherwise({
             redirectTo: "/login"
         });
