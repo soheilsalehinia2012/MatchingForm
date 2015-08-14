@@ -17,7 +17,17 @@ roomMateMatchingApp.factory('mfDataService',
                 Answer07: "2",
                 Answer08: "3",
                 Answer09: "4",
-                Answer10: "5"
+                Answer10: "5",
+                Importance01: "1",
+                Importance02: "2",
+                Importance03: "3",
+                Importance04: "1",
+                Importance05: "2",
+                Importance06: "3",
+                Importance07: "1",
+                Importance08: "2",
+                Importance09: "3",
+                Importance10: "1"
             };
         };
 

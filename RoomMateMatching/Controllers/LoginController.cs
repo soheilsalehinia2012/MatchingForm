@@ -33,7 +33,7 @@ namespace RoomMateMatching.Controllers
             {
                 if (list.Any(x => x.StdNum == user.StdNum && x.Password == user.Password))
                 {
-                    return new HttpStatusCodeResult(HttpStatusCode.OK);
+                    return GetJsonContentResult(user.StdNum);
                 }
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
             }
@@ -42,5 +42,19 @@ namespace RoomMateMatching.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
             }
         }
+
+        public ContentResult GetJsonContentResult(object data)
+        {
+            var camelCaseFormatter = new JsonSerializerSettings();
+            camelCaseFormatter.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var jsonResult = new ContentResult
+            {
+                Content = JsonConvert.SerializeObject(data, camelCaseFormatter),
+                ContentType = "application/json"
+            };
+            return jsonResult;
+        }
 	}
+
+
 }

@@ -10,5 +10,9 @@ namespace RoomMateMatching.Models
     {
         [Required]
         public string AnswersString { get; set; }
+        [Required]
+        public string ImportanceString { get; set; }
+        [Required]
+        public string StdNum { get; set; }
     }
 }

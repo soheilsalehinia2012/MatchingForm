@@ -11,6 +11,7 @@ roomMateMatchingApp.controller('lgiController',
             userDataService.getStdPass($scope.user).then(
                 function(results) {
                     //on success    
+                    authenticationService.setStdNum(results.data);
                     authenticationService.setIsAuthenticated(true);
                     $location.path('/matchingForm');
                 },

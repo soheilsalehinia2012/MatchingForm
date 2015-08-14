@@ -26,11 +26,23 @@ roomMateMatchingApp.controller('mfController',
                 $scope.answers.Answer07 != null &&
                 $scope.answers.Answer08 != null &&
                 $scope.answers.Answer09 != null &&
-                $scope.answers.Answer10 != null) {
+                $scope.answers.Answer10 != null &&
+                $scope.answers.Importance01 != null &&
+                $scope.answers.Importance02 != null &&
+                $scope.answers.Importance03 != null &&
+                $scope.answers.Importance04 != null &&
+                $scope.answers.Importance05 != null &&
+                $scope.answers.Importance06 != null &&
+                $scope.answers.Importance07 != null &&
+                $scope.answers.Importance08 != null &&
+                $scope.answers.Importance09 != null &&
+                $scope.answers.Importance10 != null) {
 
                     $scope.isFill = true;
             }
             if ($scope.isFill) {
+
+                $scope.answers.stdNum = authenticationService.getStdNum();
 
                 $scope.answers.answersString = $scope.answers.Answer01 +
                     $scope.answers.Answer02 +
@@ -42,6 +54,17 @@ roomMateMatchingApp.controller('mfController',
                     $scope.answers.Answer08 +
                     $scope.answers.Answer09 +
                     $scope.answers.Answer10;
+
+                $scope.answers.importanceString = $scope.answers.Importance01 +
+                    $scope.answers.Importance02 +
+                    $scope.answers.Importance03 +
+                    $scope.answers.Importance04 +
+                    $scope.answers.Importance05 +
+                    $scope.answers.Importance06 +
+                    $scope.answers.Importance07 +
+                    $scope.answers.Importance08 +
+                    $scope.answers.Importance09 +
+                    $scope.answers.Importance10;
 
                 mfDataService.insertAnswers($scope.answers).then(
                     function (results) {

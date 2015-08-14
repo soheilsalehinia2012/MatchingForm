@@ -199,7 +199,6 @@
   <ItemGroup>
     <Content Include="app\Controllers\lgiController.js" />
     <Content Include="app\Controllers\mfController.js" />
-    <Content Include="app\index.html" />
     <Content Include="app\RoomMateMatchingApp.js" />
     <Content Include="app\Services\authenticationService.js" />
     <Content Include="app\Services\mfDataService.js" />
