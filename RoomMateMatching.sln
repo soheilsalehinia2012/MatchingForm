@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomMateMatching", "RoomMateMatching\RoomMateMatching.csproj", "{F138B59D-73E6-489E-B4D1-605C0ACBBB4A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleDb", "SampleDb\SampleDb.csproj", "{6673412F-8A17-4B31-800A-AE8C48CFFBB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResultForm", "ResultForm\ResultForm.csproj", "{8AC43B24-D998-4B03-A295-1804D67C76D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6673412F-8A17-4B31-800A-AE8C48CFFBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6673412F-8A17-4B31-800A-AE8C48CFFBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6673412F-8A17-4B31-800A-AE8C48CFFBB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC43B24-D998-4B03-A295-1804D67C76D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC43B24-D998-4B03-A295-1804D67C76D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC43B24-D998-4B03-A295-1804D67C76D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC43B24-D998-4B03-A295-1804D67C76D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

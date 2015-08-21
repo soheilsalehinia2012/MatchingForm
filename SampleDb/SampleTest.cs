@@ -70,7 +70,8 @@ namespace SampleDb
             DataCollector.Testing = false;
             var allUsers = DataCollector.GetAllUsers();
             foreach (var user in allUsers)
-                Console.WriteLine($"User {user.StdNumber} : {user.TestResult} , {user.Ratios}");
+                Console.WriteLine(string.Format("User {0} : {1}, {2}",
+                    user.StdNumber, user.TestResult, user.Ratios));
         }
     }
 }
