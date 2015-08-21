@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using RoomMateMatching.Models;
+using SampleDb;
 
 namespace RoomMateMatching.Controllers
 {
@@ -14,33 +15,15 @@ namespace RoomMateMatching.Controllers
     {
         public ActionResult GetStdPass(UserVM user)
         {
-            //For Test, We Should have a database of users
-            //and check if this user object is in database
-
-            List<UserVM> list = new List<UserVM>()
-            {
-                new UserVM() {
-                    StdNum = "882979",
-                    Password = "12345"
-                },
-                new UserVM() {
-                    StdNum = "882970",
-                    Password = "54321"
-                }
-            };
+            List<User> list = DataCollector.GetAllUsers();
 
             if (ModelState.IsValid)
             {
-                if (list.Any(x => x.StdNum == user.StdNum && x.Password == user.Password))
-                {
+                if (list.Any(x => x.StdNumber == user.StdNum && x.Pass == user.Password))
                     return GetJsonContentResult(user.StdNum);
-                }
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
             }
-            else
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
-            }
+            return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
         }
 
         public ContentResult GetJsonContentResult(object data)

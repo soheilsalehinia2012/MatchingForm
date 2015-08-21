@@ -1,5 +1,7 @@
-﻿using Microsoft.Owin;
+﻿using System;
+using Microsoft.Owin;
 using Owin;
+using SampleDb;
 
 [assembly: OwinStartupAttribute(typeof(RoomMateMatching.Startup))]
 namespace RoomMateMatching
@@ -8,6 +10,7 @@ namespace RoomMateMatching
     {
         public void Configuration(IAppBuilder app)
         {
+            DataCollector.CreateDb();
             ConfigureAuth(app);
         }
     }

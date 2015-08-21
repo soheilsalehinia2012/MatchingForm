@@ -7,28 +7,20 @@ using System.Web.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using RoomMateMatching.Models;
+using SampleDb;
 
 namespace RoomMateMatching.Controllers
 {
     public class MatchingFormController : Controller
     {
-        //
         // GET: /MatchingForm/
         public ActionResult Insert(MatchingFormVM matchingForm)
         {
-            //for test, we should have a database of answers 
-            //and insert in it
-            List<MatchingFormVM> list = new List<MatchingFormVM>();
-            
+            DataCollector.UpdateUser(matchingForm.StdNum, matchingForm.AnswersString, matchingForm.ImportanceString);
+
             if (ModelState.IsValid)
-            {
-                list.Add(matchingForm);
                 return new HttpStatusCodeResult(HttpStatusCode.Created, "answers added.");
-            }
-            else
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
-            }
+            return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
         }
     }
 	
