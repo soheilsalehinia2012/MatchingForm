@@ -45,7 +45,7 @@ namespace RoomMateMatching
                 ));
 
 
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

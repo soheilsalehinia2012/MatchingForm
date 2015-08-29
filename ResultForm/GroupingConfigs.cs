@@ -8,6 +8,6 @@ namespace ResultForm
 {
     static class GroupingConfigs
     {
-        public const int GroupSize = 2;
+        public const int GroupSize = 4;
     }
 }

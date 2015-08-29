@@ -10,7 +10,6 @@
 
         public string TestResult { get; set; }
 
-        // Todo : Apply ratios in grouping algorithm - Update tests
         public string Ratios { get; set; }
     }
 }

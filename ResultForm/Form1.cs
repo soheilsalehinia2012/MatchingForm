@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -30,7 +31,7 @@ namespace ResultForm
             var nl = Environment.NewLine;
 
             groupsRichTextBox.Clear();
-            groupsRichTextBox.Enabled = false;
+            groupsRichTextBox.ReadOnly = true;
             groupsRichTextBox.SelectionColor = Color.Red;
             groupsRichTextBox.SelectedText = "List of roommates " + nl;
 
@@ -69,7 +70,7 @@ namespace ResultForm
                                string.Join(", ", g.Select(u => u.StdNumber)) + nl);
 
             Console.WriteLine(builder.ToString());
-//            File.WriteAllText(Path.Combine(path, "Groups.txt"), builder.ToString());
+            File.WriteAllText(Path.Combine(path, "Groups.txt"), builder.ToString());
         }
     }
 }

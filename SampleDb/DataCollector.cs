@@ -8,7 +8,6 @@ namespace SampleDb
 {
     public class DataCollector
     {
-        internal static bool Testing;
 
         public static void CreateDb(bool recreat = false)
         {
@@ -39,6 +38,24 @@ namespace SampleDb
                 {
                     new User {StdNumber = "1", Pass = "1"},
                     new User {StdNumber = "2", Pass = "2"},
+                    new User {StdNumber = "3", Pass = "3"},
+                    new User {StdNumber = "4", Pass = "4"},
+                    new User {StdNumber = "5", Pass = "5"},
+                    new User {StdNumber = "6", Pass = "6"},
+                    new User {StdNumber = "7", Pass = "7"},
+                    new User {StdNumber = "8", Pass = "8"},
+                    new User {StdNumber = "9", Pass = "9"},
+                    new User {StdNumber = "10", Pass = "10"},
+                    new User {StdNumber = "11", Pass = "11"},
+                    new User {StdNumber = "12", Pass = "12"},
+                    new User {StdNumber = "13", Pass = "13"},
+                    new User {StdNumber = "14", Pass = "14"},
+                    new User {StdNumber = "15", Pass = "15"},
+                    new User {StdNumber = "16", Pass = "16"},
+                    new User {StdNumber = "17", Pass = "17"},
+                    new User {StdNumber = "18", Pass = "18"},
+                    new User {StdNumber = "19", Pass = "19"},
+                    new User {StdNumber = "20", Pass = "20"}
                 };
 
                 foreach (var u in users)
@@ -54,7 +71,7 @@ namespace SampleDb
 
         private static SQLiteConnection GetDbConn(bool recreate = false)
         {
-            string dbLocation = Testing ? DbConfigs.TestingDbLocation : DbConfigs.DbLocation;
+            string dbLocation = DbConfigs.DbLocation;
             if (!File.Exists(dbLocation) || recreate)
                 SQLiteConnection.CreateFile(dbLocation);
             return new SQLiteConnection(string.Format("Data Source={0};Version=3;", dbLocation));

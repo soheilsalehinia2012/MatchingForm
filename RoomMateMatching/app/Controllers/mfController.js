@@ -9,7 +9,6 @@ roomMateMatchingApp.controller('mfController',
             $location.path('/login');
         }
 
-        //for preset the answers, later will be deleted
         $scope.answers = mfDataService.getAnswers();
 
         $scope.showValidationError = false;

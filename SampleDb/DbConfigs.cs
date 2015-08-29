@@ -8,7 +8,6 @@ namespace SampleDb
 {
     public static class DbConfigs
     {
-        public const string DbLocation = @"C:\Users\Arash\Documents\Projects\Rommate-Final\RoomMateMatching\bin\SampleDb.sqlite";
-        public const string TestingDbLocation = @"C:\Users\Arash\Documents\Projects\Rommate-Final\SampleDb\bin\Debug\SampleDb.sqlite";
+        public const string DbLocation = @"C:\Users\matin pc\Documents\visual studio 2013\Projects\Main\RoomMateMatching\RoomMateMatching\bin\SampleDb.sqlite";
     }
 }
