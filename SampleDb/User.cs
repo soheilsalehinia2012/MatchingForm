@@ -9,7 +9,5 @@
         public string Pass { get; set; }
 
         public string TestResult { get; set; }
-
-        public string Ratios { get; set; }
     }
 }

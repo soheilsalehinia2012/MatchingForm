@@ -16,7 +16,7 @@ namespace RoomMateMatching.Controllers
         // GET: /MatchingForm/
         public ActionResult Insert(MatchingFormVM matchingForm)
         {
-            DataCollector.UpdateUser(matchingForm.StdNum, matchingForm.AnswersString, matchingForm.ImportanceString);
+            DataCollector.UpdateUser(matchingForm.StdNum, matchingForm.AnswersString);
 
             if (ModelState.IsValid)
                 return new HttpStatusCodeResult(HttpStatusCode.Created, "answers added.");

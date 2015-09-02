@@ -22,8 +22,7 @@ namespace ResultForm
                 .Select(u => new
                 {
                     StudentNumber = u.StdNumber,
-                    TestResult = u.TestResult,
-                    Ratios = u.Ratios
+                    TestResult = u.TestResult
                 }).ToList();
 
             var groups = DataAnalayser.CreateGroups(allUsers, GroupingConfigs.GroupSize);

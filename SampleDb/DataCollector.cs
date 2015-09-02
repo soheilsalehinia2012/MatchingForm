@@ -20,8 +20,7 @@ namespace SampleDb
                           "(Id INTEGER PRIMARY KEY AUTOINCREMENT," +
                           "StdNumber NVARCHAR(20)," +
                           "Pass NVARCHAR(20)," +
-                          "TestResult NVARCHAR(10)," +
-                          "Ratios NVARCHAR(10));";
+                          "TestResult NVARCHAR(10));";
                 SQLiteCommand command = new SQLiteCommand(cmd, dbConn);
                 command.ExecuteNonQuery();
             }
@@ -94,23 +93,21 @@ namespace SampleDb
                         StdNumber = (string) reader[1],
                         Pass = (string) reader[2],
                         TestResult = reader[3] as string,
-                        Ratios = reader[4] as string,
                     });
             }
 
             return users;
         }
 
-        public static void UpdateUser(string stdNum, string result, string ratios)
+        public static void UpdateUser(string stdNum, string result)
         {
             using (var dbConn = GetDbConn())
             {
                 dbConn.Open();
 
                 SQLiteCommand updateCmd = new SQLiteCommand(
-                    "UPDATE Users SET TestResult = @result, Ratios = @ratio WHERE StdNumber=@stdNum", dbConn);
+                    "UPDATE Users SET TestResult = @result WHERE StdNumber=@stdNum", dbConn);
                 updateCmd.Parameters.Add(new SQLiteParameter("@result", result));
-                updateCmd.Parameters.Add(new SQLiteParameter("@ratio", ratios));
                 updateCmd.Parameters.Add(new SQLiteParameter("@stdNum", stdNum));
                 updateCmd.ExecuteNonQuery();
             }
